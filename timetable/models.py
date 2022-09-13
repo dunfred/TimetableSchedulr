@@ -27,44 +27,89 @@ DAYS = (
 )
 
 class Faculty(models.Model):
-    faculty_name = models.CharField(max_length=100, unique=True)
+    faculty_name = models.CharField(_("Faculty"), max_length=100, unique=True)
 
     class Meta:
         verbose_name = "Faculty"
         verbose_name_plural = "Faculties"
-        
+
     def __str__(self):
-        return str(self.name).title()
+        return str(self.faculty_name).title()
+
+    def save(self, *args, **kwargs):
+        try:
+            if self.faculty_name:
+                self.faculty_name = self.faculty_name.lstrip().rstrip().title()
+        except Exception:
+            pass
+        super(Faculty, self).save(*args, **kwargs)
+
 
 class Department(models.Model):
-    department_name = models.CharField(max_length=100, unique=True)
+    department_name = models.CharField(_("Department"), max_length=100, unique=True)
     faculty         = models.ForeignKey(Faculty, related_name="departments", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.faculty.faculty_name}: {self.department_name}".title()
 
+    def save(self, *args, **kwargs):
+        try:
+            if self.department_name:
+                self.department_name = self.department_name.lstrip().rstrip().title()
+        except Exception:
+            pass
+        super(Department, self).save(*args, **kwargs)
+
 
 class Programme(models.Model):
-    programme_name   = models.CharField(max_length=100, unique=True, help_text="Ex: Information Technology (BSc) Level 100")
+    programme_name   = models.CharField(_("Programme"), max_length=100, unique=True, help_text="Ex: Information Technology (BSc) Level 100")
     department      = models.ForeignKey(Department, related_name="programmes", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.department.department_name}: {self.programme_name}".title()
 
+    def save(self, *args, **kwargs):
+        try:
+            if self.programme_name:
+                self.programme_name = self.programme_name.lstrip().rstrip().title()
+        except Exception:
+            pass
+        super(Programme, self).save(*args, **kwargs)
+
 
 class Venue(models.Model):
-    room = models.CharField(max_length=100, unique=True)
+    room = models.CharField(_("Venue Name"), max_length=100, unique=True)
 
     def __str__(self):
-        return str(self.room).title()
+        return str(self.room).upper()
+
+    def save(self, *args, **kwargs):
+        try:
+            if self.room:
+                self.room = self.room.lstrip().rstrip().upper()
+        except Exception:
+            pass
+        super(Venue, self).save(*args, **kwargs)
+
 
 class Course(models.Model):
-    course_number = models.CharField(_("Course Number"), max_length=8, primary_key=True, help_text="Ex: INF101")
+    course_code   = models.CharField(_("Course Code"), max_length=8, primary_key=True, help_text="Ex: INF101")
     course_name   = models.CharField(_("Course Name"), max_length=100)
     programme     = models.ForeignKey(Programme, related_name="courses", on_delete=models.CASCADE)
 
+    class Meta:
+        unique_together = ('course_code', 'course_name',)
+
     def __str__(self):
         return f'{self.course_number} {self.course_name}'
+
+    def save(self, *args, **kwargs):
+        try:
+            if self.course_name:
+                self.course_name = self.course_name.lstrip().rstrip().title()
+        except Exception:
+            pass
+        super(Course, self).save(*args, **kwargs)
 
 
 class Period(models.Model):
@@ -78,3 +123,4 @@ class Period(models.Model):
 
     class Meta:
         unique_together = ('course', 'venue', 'time', 'day',)
+

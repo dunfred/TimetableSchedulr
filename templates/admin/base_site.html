@@ -1,0 +1,13 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block branding %}
+ <h2 id="head">
+    <a href="/secureadmin"> <img src="{% static 'img/ucc_logo_new.png' %}"/></a>
+ </h2>
+
+{% endblock branding %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock extrastyle %}

@@ -49,7 +49,7 @@ class User(AbstractBaseUser):
     is_staff        = models.BooleanField(_('Admin Access'), default=False)
     is_superuser    = models.BooleanField(_('Superuser'), default=False)
     phone           = PhoneNumberField(_('phone'), blank=False, null=False, max_length=16, unique=True)
-    department      = models.ForeignKey('timetable.Department', on_delete = models.DO_NOTHING, blank=True, null=True)    
+    department      = models.ForeignKey('timetable.Department', related_name='lecturers', on_delete = models.DO_NOTHING, blank=False, null=True)    
     courses         = models.ManyToManyField('timetable.Course', blank=True)
     last_login      = models.DateTimeField(_('last_login'), auto_now=True)
     date_joined     = models.DateTimeField(auto_now_add=True)

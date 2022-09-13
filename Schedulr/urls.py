@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', include('timetable.urls'), name='timetable'),
     path('', include('user.urls'), name='user'),
-    path('admin/', admin.site.urls),
+    path('secureadmin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
