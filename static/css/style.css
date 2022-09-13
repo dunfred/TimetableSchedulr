@@ -1,0 +1,218 @@
+*{
+    padding: 0;
+    margin: 0%;
+    font-family:Helvetica, sans-serif;
+}
+nav {
+    height: 12vh;
+    width: 100%;
+    background-color: #182170;
+    display: flex;
+    
+}
+.banner{
+    width: 15%;
+    height: 100%;
+    outline: none;
+}
+.banner img{
+    height: 100%;
+	width: 100%;
+    outline: none;
+
+}
+
+/* -----------------dashboard--------------- */
+.tabs{
+    width: 15%;
+    height: 100%;
+    margin-left: 48%;
+}
+
+.tabs ul{
+    display: flex;
+    list-style-type: none;
+    margin: 45px 0;
+        /* border-right: 2px solid white; */
+}
+.tabs ul li{
+    margin: 0 15px;
+}
+.tabs ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+}
+.tabs ul li:hover{
+    border-bottom: 2px solid white;
+    padding-bottom: 3px;
+}
+.user{
+    width: 20%;
+    height: 100%;
+    color: white;
+    display: flex;
+}
+.user-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 30px;
+    background: rgb(113, 113, 215);
+    margin-left: 10px;
+}
+.user-name{
+    font-size: 1.34rem;
+    margin-top: 45px;
+    margin-left: 10px;
+
+}
+.logout{
+    margin: 45px 20px;
+    font-size: 1.3rem;
+    border-left: 2px solid white;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+/* --------------------login------------------- */
+.login-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 550px;
+    height: 55vh;
+    border: 1px solid grey;
+    border-radius: 7px;
+    background: rgba(245, 245, 245, 0.398);
+}
+.logo {
+    height: 18%;
+    width: 18%;
+    margin: 20px auto 40px auto; 
+}
+.logo:hover{
+    cursor: pointer;
+}
+.logo img{
+    height:100%;
+    width: 100%;
+}
+.card form{
+    width: 100%;
+    height: 100px;
+}
+form .name{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+form .name label{
+    display: block;
+    font-size: 1.25rem;
+    margin-left: 30px;
+}
+form .name input{
+    display: block;
+    margin: 4px auto;
+    width: 88%;
+    height: 40px;
+    outline: none;
+    padding-left: 6px;
+    border-radius: 4px;
+}
+form .name a{
+    /* display: block; */
+    font-size: 0.9rem;
+    margin-left: 30px;
+    margin-top: 4px;
+}
+
+form .password{
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+}
+form .password label{
+    display: block;
+    font-size: 1.25rem;
+    margin-left: 30px;
+}
+form .password input{
+    display: block;
+    margin: 4px auto;
+    width: 88%;
+    height: 40px;
+    outline: none;
+    padding-left: 6px;
+    border-radius: 4px;
+}
+form .password a{
+    /* display: block; */
+    font-size: 0.9rem;
+    margin-left: 30px;
+    margin-top: 4px;
+}
+
+.bottom{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.bottom a{
+    font-size: 0.9rem;
+    margin-left: 30px;
+    margin-top: 4px;
+}
+.bottom .next{
+    width: 120px;
+    /* height: 4vh; */
+    background: #182170;
+    margin-right: 30px;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px 0;
+}
+.bottom .next:hover{
+    background: #182170ec;
+}
+
+
+/* ------------index ----------- */
+.jumbotron {
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.jumbotron .container{
+    margin-top: 20px;
+}
+.jumbotron .container h1{
+    font-size: 3.0rem;
+}
+.jumbotron .container .text{
+    margin-top: 5px;
+    font-size: 1.13rem;
+    
+}
+.jumbotron .container .btn-primary{
+    width: 150px;
+    border-radius: 5px;
+    background: #182170;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px 0;
+}
+.jumbotron .container .btn-primary a{
+    color: white;
+    text-decoration: none;
+
+}
