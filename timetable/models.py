@@ -101,10 +101,12 @@ class Course(models.Model):
         unique_together = ('course_code', 'course_name',)
 
     def __str__(self):
-        return f'{self.course_number} {self.course_name}'
+        return f'{self.course_code} {self.course_name}'.upper()
 
     def save(self, *args, **kwargs):
         try:
+            if self.course_code:
+                self.course_code = self.course_code.lstrip().rstrip().upper()
             if self.course_name:
                 self.course_name = self.course_name.lstrip().rstrip().title()
         except Exception:
