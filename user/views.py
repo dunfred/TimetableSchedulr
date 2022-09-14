@@ -1,4 +1,4 @@
-from django.contrib import auth, messages
+from django.contrib import auth #, messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 import requests
@@ -14,7 +14,6 @@ def login(request):
 
         user = auth.authenticate(email=email, password=password)
         auth.login(request, user)
-        messages.success(request, "You're now logged in.")
         url = request.META.get('HTTP_REFERER')
 
         try:
@@ -33,7 +32,6 @@ def login(request):
 @login_required(login_url='user:login')
 def logout(request):
     auth.logout(request)
-    messages.success(request, 'Succesfully logged out.')
     return redirect('user:login')
 
 

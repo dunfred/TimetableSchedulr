@@ -31,13 +31,11 @@ Once `pip` has finished downloading the dependencies:
 (env)$ cd TimetableSchedulr
 (env)$ python manage.py runserver
 ```
-And navigate to `http://127.0.0.1:8000/`.
+And navigate to `http://127.0.0.1:8000/`
 
 
 
 ### Authors
-```sh
-- Fred Dunyo (`https://github.com/dunfred`)
-- Jeremiah Quaynor (`https://github.com/Jeremiah-Quaynor`)
-- Joshua Tetteh (`https://github.com/joshthedevelopa`)
-```
+- Fred Dunyo `https://github.com/dunfred`
+- Jeremiah Quaynor `https://github.com/Jeremiah-Quaynor`
+- Joshua Tetteh `https://github.com/joshthedevelopa`
