@@ -119,6 +119,7 @@ class Period(models.Model):
     venue   = models.ForeignKey(Venue, related_name="periods", on_delete=models.CASCADE)
     time    = models.CharField(_("Time"), max_length=25, choices=TIME_SLOTS, default='08:30 am - 09:30 am')
     day     = models.CharField(_("Day"), max_length=10, choices=DAYS)
+    changed = models.BooleanField(_("Rescheduled"), default=False)
 
     def __str__(self):
         return f'{self.day} {self.time}'
