@@ -1,43 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Timetable Schedulr</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_body %}
 <body>
     <header>
-        <nav>
-            <div class="banner">
-                <!-- change routing -->
-                <a href="./index.html">
-                    <img src="./Banner_69.jpg" alt="Banner" draggable="false">
-                </a>    
-            </div>
-            <div class="tabs">
-                <ul>
-                    <li class="tab">
-                        <a href="./dashboard.html">Home</a>
-                    </li>
-                    <li class="tab">
-                        <a href="./addLecture.html">Add Lecture</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="user">
-                <div class="user-image">
-
-                </div>
-                <div class="user-name">
-                    Firstname Lastname
-                </div>
-                <div class="logout">
-                    Logout
-                </div>
-            </div>
-        </nav>
+        {% include "includes/nav.html" %}
     </header>
+
+    {% include "timetable.html" %}
+    
 </body>
-</html>
+{% endblock main_body %}
+

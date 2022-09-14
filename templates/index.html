@@ -1,61 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Timetable Schedulr</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_body %}
 <body>
     <header>
-        <nav>
-            <div class="banner">
-                <!-- change routing -->
-                <a href="./index.html">
-                    <img src="./Banner_69.jpg" alt="Banner" draggable="false">
-                </a>    
-            </div>
-            <div class="tabs">
-                <ul>
-                    <li class="tab">
-                        <a href="./dashboard.html">Home</a>
-                    </li>
-                    <li class="tab">
-                        <a href="./addLecture.html">Add Lecture</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="user">
-                <div class="user-image">
-
-                </div>
-                <div class="user-name">
-                    Firstname Lastname
-                </div>
-                <div class="logout">
-                    Logout
-                </div>
-            </div>
-        </nav>
+        {% include "includes/nav.html" %}
     </header>
+
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-4">Hello {Firstname} Lets Get Started with Schedulr</h1>
+            <h1 class="display-4">Hello {{ user.first_name|title }} {{ user.last_name|title }} Lets Get Started with Schedulr</h1>
             <p class="text">Greetings from Schedulr!, a mechanism for managing timetables that college 
-              and university organizations can use to plan their schedule. Schedulr began 
-              as a business that built trusting partnerships with schools, colleges, and 
-              institutions to assist them in creating their timetables easily and as effectively 
-              as possible, saving the organization's important time in the process. Start by 
-              looking at the system's flow below, or get in touch with us if you have any questions 
-              or problems.
+            and university organizations can use to plan their schedule. Schedulr began 
+            as a business that built trusting partnerships with schools, colleges, and 
+            institutions to assist them in creating their timetables easily and as effectively 
+            as possible, saving the organization's important time in the process. Start by 
+            looking at the system's flow below, or get in touch with us if you have any questions 
+            or problems.
             </p>
             <div class="btn-primary">
                 <a href="./dashboard.html">
                     Get Started
                 </a>
             </div>
-          </div>
+        </div>
     </div>
 </body>
-</html>
+
+{% endblock main_body %}

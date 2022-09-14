@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base.html' %}
+{% load static %}
 
-    <title>Timetable Schedulr</title>
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/timetable.css' %}">
+{% endblock styles %}
 
-    <link rel="stylesheet" type="text/css" href="css/timetable.css">
-</head>
+{% block main_body %}
+
 <body>
     <div class="timetable">
         <table>
@@ -24,7 +22,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>6:30am - 7:30am</th>
+                    <th>6:30 am - 7:30 am</th>
                     <td class="disabled"></td>
                     <td></td>
                     <td>
@@ -35,7 +33,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <th>6:30am - 7:30am</th>
+                    <th>7:30 am - 8:30 am</th>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -43,7 +41,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <th>6:30am - 7:30am</th>
+                    <th>8:30 am - 9:30 am</th>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -51,7 +49,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <th>6:30am - 7:30am</th>
+                    <th>9:30 am - 10:30 am</th>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -59,7 +57,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <th>6:30am - 7:30am</th>
+                    <th>10:30 am - 11:30 am</th>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -67,7 +65,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <th>6:30am - 7:30am</th>
+                    <th>11:30 am - 12:30 pm</th>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -75,7 +73,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <th>6:30am - 7:30am</th>
+                    <th>12:30 pm - 1:30 pm</th>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -83,7 +81,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <th>6:30am - 7:30am</th>
+                    <th>1:30 pm - 2:30 pm</th>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -91,7 +89,31 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <th>6:30am - 7:30am</th>
+                    <th>2:30 pm - 3:30 pm</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>3:30 pm - 4:30 pm</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>4:30 pm - 5:30 pm</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>5:30 pm - 6:30 pm</th>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -111,8 +133,11 @@
             </tfoot>
         </table>
     </div>
-
-    <script src="js/timetable.js"></script>
-    <script src="js/main.js"></script>
 </body>
-</html>
+{% endblock main_body %}
+
+
+{% block scripts %}
+<script src="{% static 'js/timetable.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock scripts %}
