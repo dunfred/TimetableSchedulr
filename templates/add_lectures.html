@@ -2,11 +2,34 @@
 {% load static %}
 
 {% block main_body %}
+
 <body>
     <div class="form-overlay">
         <div class="form-container">
-            <input type="text" value="" disabled>
-            <input type="text" value="" disabled>
+            <div class="form-header" style="text-align: right; padding: 0.25rem;cursor: pointer;">
+                <span class="close-btn" style="padding: 1rem">x</span>
+            </div>
+            <form id="add_lecture_form" action="" method="POST">
+                <div class="form-group">
+                    <input name="days" type="text" value="" disabled>
+                </div>
+                <div class="form-group">
+                    <input name="timings" type="text" value="" disabled>
+                </div>
+                <div class="form-group">
+                    <select name="venue">
+                        <option value="">-- Select A Course --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="course">
+                        <option value="">-- Select A Venue --</option>
+                    </select>            
+                </div>
+                <div class="form-group">
+                    <input class="btn-primary submit" type="submit" value="Add Lecture">
+                </div>
+            </form>
         </div>
     </div>
     <header>
@@ -14,7 +37,6 @@
     </header>
 
     {% include "timetable.html" %}
-    
+
 </body>
 {% endblock main_body %}
-

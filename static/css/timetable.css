@@ -36,16 +36,15 @@
     color: #4d4d4d;
 }
 
-.timetable table tbody tr th:first-child {
-    max-width: 40px;
-}
-
 .timetable table td, .timetable table th {
     padding: 1.5rem 1rem;
 }
 
-.timetable table tbody tr th {
+.timetable table tbody th {
     text-align: right;
+    width: 150px;
+    font-size: 0.9rem;
+
 }
 
 .timetable table tr td {

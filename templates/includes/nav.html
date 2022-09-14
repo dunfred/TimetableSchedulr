@@ -1,44 +1,43 @@
 {% load static %}
 <nav>
     <div class="banner">
-        <!-- change routing -->
         <a href="{% url 'timetable:index' %}">
             <img src="{% static 'img/Banner_69.jpg' %}" alt="Banner" draggable="false">
         </a>    
     </div>
-    <div class="tabs">
-        <ul>
-            {% if user.is_authenticated %}
-                <li class="tab">
-                    <a href="{% url 'timetable:dashboard' %}">Home</a>
-                </li>
-                <li class="tab">
-                    <a href="{% url 'timetable:add_lecture' %}">Add Lecture</a>
-                </li>
-            {% endif %}
-        </ul>
+    <div class="nav-list">
+        <div class="tabs">
+            <ul>
+                {% if user.is_authenticated %}
+                    <li class="tab">
+                        <a href="{% url 'timetable:dashboard' %}">Home</a>
+                    </li>
+                    <li class="tab">
+                        <a href="{% url 'timetable:add_lecture' %}">Add Lecture</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+        {% if user.is_authenticated %}
+            <div class="user">
+                <div class="user-name">
+                    {{ user.first_name|title }} {{ user.last_name|title }}
+                </div>
+                <div class="logout">
+                    
+                    <a href="{% url 'user:logout' %}" style="text-decoration:none">
+                        Logout
+                    </a>
+                </div>
+            </div>
+        {% else %}
+            <div class="user">
+                <div class="logout">
+                    <a href="{% url 'user:login' %}" style="text-decoration:none">
+                        Login
+                    </a>
+                </div>
+            </div>
+        {% endif %}
     </div>
-    {% if user.is_authenticated %}
-        <div class="user">
-            <!-- <div class="user-image">
-            </div> -->
-            <div class="user-name">
-                {{ user.first_name|title }} {{ user.last_name|title }}
-            </div>
-            <div class="logout">
-                
-                <a href="{% url 'user:logout' %}" style="text-decoration:none">
-                    Logout
-                </a>
-            </div>
-        </div>
-    {% else %}
-        <div class="user">
-            <div class="logout">
-                <a href="{% url 'user:login' %}" style="text-decoration:none">
-                    Login
-                </a>
-            </div>
-        </div>
-    {% endif %}
 </nav>

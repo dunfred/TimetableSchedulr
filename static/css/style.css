@@ -2,14 +2,16 @@
     padding: 0;
     margin: 0%;
     font-family:Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 nav {
-    height: 12vh;
+    height: 80px;
     width: 100%;
     background-color: #182170;
     display: flex;
     justify-content: space-between;
 }
+
 .banner{
     width: 15%;
     height: 100%;
@@ -23,57 +25,57 @@ nav {
 }
 
 /* -----------------dashboard--------------- */
-.tabs{
-    width: 15%;
-    height: 100%;
-    margin-left: 48%;
+
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 1rem;
 }
 
 .tabs ul{
     display: flex;
     list-style-type: none;
-    margin: 45px 0;
-        /* border-right: 2px solid white; */
+    padding-right: 2rem; 
 }
 
 .tabs ul li{
-    margin: 0 15px;
+    padding: 0 0.5rem;
 }
+
 .tabs ul li a {
     text-decoration: none;
     color: white;
     font-size: 1.4rem;
 }
+
 .tabs ul li:hover{
     border-bottom: 2px solid white;
     padding-bottom: 3px;
 }
+
 .user{
     width: auto;
-    height: 100%;
     color: white;
     display: flex;
 }
-.user-image{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-top: 30px;
-    background: rgb(113, 113, 215);
-    margin-left: 10px;
-}
+
 .user-name{
     font-size: 1.34rem;
-    margin-top: 45px;
-    margin-left: 10px;
+    padding-right: 1rem;
 }
 
-.logout{
-    margin: 45px 20px;
+.logout {
     font-size: 1.3rem;
     border-left: 2px solid white;
-    padding-left: 10px;
+    padding-left: 1rem;
     cursor: pointer;
+}
+
+.logout > a {
+    color: #fffa !important;
+    text-decoration: underline !important;
 }
 
 /* --------------------login------------------- */
@@ -126,7 +128,6 @@ form .name input{
     border-radius: 4px;
 }
 form .name a{
-    /* display: block; */
     font-size: 0.9rem;
     margin-left: 30px;
     margin-top: 4px;
@@ -152,7 +153,6 @@ form .password input{
     border-radius: 4px;
 }
 form .password a{
-    /* display: block; */
     font-size: 0.9rem;
     margin-left: 30px;
     margin-top: 4px;
@@ -172,7 +172,6 @@ form .password a{
 }
 .bottom .next{
     width: 120px;
-    /* height: 4vh; */
     background: #182170;
     margin-right: 30px;
     border-radius: 4px;
@@ -221,6 +220,7 @@ form .password a{
 
 /* ------------add lectures ----------- */
 .form-overlay {
+    display: none;
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -229,5 +229,32 @@ form .password a{
 }
 
 .form-overlay .form-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     background-color: white;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.form-container .form-group {
+    padding: 0.5rem;
+}
+
+.form-container .form-group input,
+.form-container .form-group select {
+    border: rgba(27, 31, 35, 0.25) 1px solid;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    outline: none;
+}
+
+.form-container .form-group input.submit  {
+    padding: 0.5rem 1rem;
+    background: #182170;
+    color: white;
+    outline: none;
 }
