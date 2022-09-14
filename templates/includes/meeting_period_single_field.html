@@ -1,0 +1,36 @@
+
+<td>
+    {% for period in monday %}
+        {% if period.day == "Monday" and period.time ==  time_period %}
+            {% include 'includes/meeting_period_single_field_container.html' %}
+        {% endif %}
+    {% endfor %}
+</td>
+<td>
+    {% for period in tuesday %}
+        {% if period.day == "Tuesday" and period.time ==  time_period %}
+            {% include 'includes/meeting_period_single_field_container.html' %}
+        {% endif %}
+    {% endfor %}
+</td>
+<td>
+    {% for period in wednesday %}
+        {% if period.day == "Wednesdy" and period.time ==  time_period %}
+            {% include 'includes/meeting_period_single_field_container.html' %}
+        {% endif %}
+    {% endfor %}
+</td>
+<td>
+    {% for period in thursday %}
+        {% if period.day == "Thursday" and period.time ==  time_period %}
+            {% include 'includes/meeting_period_single_field_container.html' %}
+        {% endif %}
+    {% endfor %}
+</td>
+<td>
+    {% for period in friday %}
+        {% if period.day == "Friday" and period.time ==  time_period %}
+            {% include 'includes/meeting_period_single_field_container.html' %}
+        {% endif %}
+    {% endfor %}
+</td>

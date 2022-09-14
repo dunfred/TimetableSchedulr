@@ -13,7 +13,13 @@ class Timetable {
             for (let cell_index = 0; cell_index < cells.length; cell_index++) {
                 let cell = cells[cell_index];
         
-                cell.addEventListener("click", () => {this.onClick(row_index, cell_index)});
+                cell.addEventListener("click", () => {
+                    if(cell.children[0] != null && cell.children[0].classList.contains("disabled")) {
+                        return;
+                    }
+
+                    this.onClick(row_index, cell_index)
+                });
             }
         }
     }

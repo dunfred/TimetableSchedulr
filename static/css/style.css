@@ -24,6 +24,12 @@ nav {
 
 }
 
+.page_heading  {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0 2rem 0;
+}
+
 /* -----------------dashboard--------------- */
 
 
