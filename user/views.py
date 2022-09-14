@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 import requests
 
 # Create your views here.
-def login(request):
+def login_view(request):
     context = {}
     template_name = "login.html"
 
@@ -14,8 +14,9 @@ def login(request):
 
         user = auth.authenticate(email=email, password=password)
         auth.login(request, user)
-        url = request.META.get('HTTP_REFERER')
 
+        # Check if user was attempting to visit another page
+        url = request.META.get('HTTP_REFERER')
         try:
             query = requests.utils.urlparse(url).query
             params = dict(x.split('=') for x in query.split('&'))
@@ -30,7 +31,7 @@ def login(request):
 
 
 @login_required(login_url='user:login')
-def logout(request):
+def logout_view(request):
     auth.logout(request)
     return redirect('user:login')
 
