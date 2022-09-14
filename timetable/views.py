@@ -20,3 +20,9 @@ def timetable(request):
     template_name = "timetable.html"
     return render(request, template_name, context)
 
+
+@login_required(login_url='user:login')
+def add_lecture(request):
+    context = {}
+    template_name = "add_lectures.html"
+    return render(request, template_name, context)

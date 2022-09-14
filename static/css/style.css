@@ -217,3 +217,17 @@ form .password a{
     text-decoration: none;
 
 }
+
+
+/* ------------add lectures ----------- */
+.form-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0006;
+    z-index: 1000;
+}
+
+.form-overlay .form-container {
+    background-color: white;
+}

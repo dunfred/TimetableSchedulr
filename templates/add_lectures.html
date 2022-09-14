@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_body %}
+<body>
+    <div class="form-overlay">
+        <div class="form-container">
+            <input type="text" value="" disabled>
+            <input type="text" value="" disabled>
+        </div>
+    </div>
+    <header>
+        {% include "includes/nav.html" %}
+    </header>
+
+    {% include "timetable.html" %}
+    
+</body>
+{% endblock main_body %}
+
