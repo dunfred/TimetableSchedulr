@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_body %}
+
+<body>
+    <div class="form-overlay">
+        <div class="form-container">
+            <div class="form-header" style="text-align: right; padding: 0.25rem;cursor: pointer;">
+                <span class="close-btn" style="padding: 1rem">x</span>
+            </div>
+            <form id="add_lecture_form" action="{% url 'timetable:create_period' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input name="day" type="text" value="" disabled>
+                    <input type="hidden" value="" name="days">
+                </div>
+                <div class="form-group">
+                    <input name="timing" type="text" value="" disabled>
+                    <input type="hidden" value="" name="timings">
+                </div>
+                <div class="form-group">
+                    <select name="course" required>
+                        <option value="">-- Select A Course --</option>
+                        {% for course in courses %}
+                            <option value="{{course.course_code}}"> {{ course }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="venue" required>
+                        <option value="">-- Select A Venue --</option>
+                        {% for venue in free_venues %}
+                            <option value="{{venue.id}}"> {{ venue }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input class="btn-primary submit" type="submit" value="Add Lecture">
+                </div>
+            </form>
+        </div>
+    </div>
+    <header>
+        {% include "includes/nav.html" %}
+    </header>
+
+    <h1 class="page_heading">Add Lecture </h1>
+
+    {% include "timetable.html" %}
+
+</body>
+{% endblock main_body %}

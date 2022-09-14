@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_body %}
+<body>
+    <header>
+        {% include "includes/nav.html" %}
+    </header>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Hello {{ user.first_name|title }} {{ user.last_name|title }} Lets Get Started with Schedulr</h1>
+            <p class="text">Greetings from Schedulr!, a mechanism for managing timetables that college 
+            and university organizations can use to plan their schedule. Schedulr began 
+            as a business that built trusting partnerships with schools, colleges, and 
+            institutions to assist them in creating their timetables easily and as effectively 
+            as possible, saving the organization's important time in the process. Start by 
+            looking at the system's flow below, or get in touch with us if you have any questions 
+            or problems.
+            </p>
+            <div class="btn-primary">
+                <a href="./dashboard.html">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock main_body %}

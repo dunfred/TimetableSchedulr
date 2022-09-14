@@ -1,0 +1,110 @@
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/timetable.css' %}">
+{% endblock styles %}
+
+{% block main_body %}
+
+    <div class="timetable">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Mondays</th>
+                    <th>Tuesdays</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>6:30 am - 7:30 am</th>
+                    {% with time_period="6:30 am - 7:30 am" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+                <tr>
+                    <th>7:30 am - 8:30 am</th>
+                    {% with time_period="7:30 am - 8:30 am" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+                <tr>
+                    <th>8:30 am - 9:30 am</th>
+                    {% with time_period="8:30 am - 9:30 am" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+                <tr>
+                    <th>9:30 am - 10:30 am</th>
+                    {% with time_period="9:30 am - 10:30 am" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+                <tr>
+                    <th>10:30 am - 11:30 am</th>
+                    {% with time_period="10:30 am - 11:30 am" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+                <tr>
+                    <th>11:30 am - 12:30 pm</th>
+                    {% with time_period="11:30 am - 12:30 pm" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+                <tr>
+                    <th>12:30 pm - 1:30 pm</th>
+                    {% with time_period="12:30 pm - 1:30 pm" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+                <tr>
+                    <th>1:30 pm - 2:30 pm</th>
+                    {% with time_period="1:30 pm - 2:30 pm" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+                <tr>
+                    <th>2:30 pm - 3:30 pm</th>
+                    {% with time_period="2:30 pm - 3:30 pm" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+                <tr>
+                    <th>3:30 pm - 4:30 pm</th>
+                    {% with time_period="3:30 pm - 4:30 pm" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+                <tr>
+                    <th>4:30 pm - 5:30 pm</th>
+                    {% with time_period="4:30 pm - 5:30 pm" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+                <tr>
+                    <th>5:30 pm - 6:30 pm</th>
+                    {% with time_period="5:30 pm - 6:30 pm" monday=monday tuesday=tuesday wednesday=wednesday thursday=thursday friday=friday %}
+                        {% include "includes/meeting_period_single_field.html" %}
+                    {% endwith %}
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Mondays</th>
+                    <th>Tuesdays</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>             
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    {{ periods }}
+    {{ periods2 }}
+{% endblock main_body %}
+

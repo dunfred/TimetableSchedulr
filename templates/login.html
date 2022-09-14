@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_body %}
+<body class="login-container">
+    <div class="card">
+        <div class="logo">
+            <img src="{% static 'img/logo.jpg' %}" alt="logo" draggable="false">
+        </div>
+        <form action="{% url 'user:login' %}" method="POST">
+            {% csrf_token %}
+            <div class="name">
+                <label for="email">Email:</label>
+                <input type="email" name="email" class="email">
+            </div>
+            <div class="password">
+                <label for="password">Password:</label>
+                <input type="password" name="password" class="password">
+            </div>
+            <div class="bottom">
+                <a href="#"></a>
+                <button class="next">Login</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+{% endblock main_body %}
+

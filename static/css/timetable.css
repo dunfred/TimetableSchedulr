@@ -1,0 +1,79 @@
+
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.timetable {
+    margin: 1rem;
+    width: calc(100% - 2rem);
+    border-radius: 0.6rem;
+    border: rgba(27, 31, 35, 0.1) 0.5px solid;
+}
+
+.timetable table {
+    width: 100%;
+    border: none;
+    border-radius: 0.6rem;
+    padding-right: 0.25rem;
+}
+
+.timetable table thead {
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+.timetable table thead tr th:first-child, 
+.timetable table tfoot tr th:first-child {
+    text-align: center;
+}
+
+.timetable table thead tr th, 
+.timetable table tfoot tr th,
+.timetable table tbody tr th  {
+    color: #4d4d4d;
+}
+
+.timetable table td:not(div), 
+.timetable table td div, 
+.timetable table th {
+    padding: 1.5rem 1rem;
+}
+
+.timetable table tbody th {
+    text-align: right;
+    width: 150px;
+    font-size: 0.9rem;
+
+}
+
+.timetable table tr td {
+    border: rgba(27, 31, 35, 0.1) 1px solid;
+}
+
+.timetable table tbody td {
+    height: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.timetable table tbody td div > span,
+.timetable table tbody td > span { 
+    display: block;
+}
+
+.timetable table tbody td .disabled {
+    background-color: rgba(27, 31, 35, 0.25);
+}
+
+.timetable table tbody td:not(div.disabled):hover {
+    background-color: #f2f2f2;
+}
+
+.timetable table tbody td:not(div.disabled):active {
+    transform: translateY(2px);
+}
+
+

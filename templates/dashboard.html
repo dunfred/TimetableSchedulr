@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_body %}
+<body>
+    <header>
+        {% include "includes/nav.html" %}
+    </header>
+
+    <h1 class="page_heading">Your Timetable </h1>
+
+    {% include "timetable.html" %}
+    
+</body>
+{% endblock main_body %}
+
