@@ -33,10 +33,10 @@ Once `pip` has finished downloading the dependencies:
 ```
 And navigate to `http://127.0.0.1:8000/`
 
-## Project Presentaion
+### Project Presentaion
 [View file here](https://docs.google.com/presentation/d/1I7_wptVINioTSd7CtIkJQl_MoLVk4qALV5z8KF9cuZM/edit#slide=id.g1f87997393_0_787)
 
 ### Authors
-- Fred Dunyo `https://github.com/dunfred`
-- Jeremiah Quaynor `https://github.com/Jeremiah-Quaynor`
-- Joshua Tetteh `https://github.com/joshthedevelopa`
+- [Fred Dunyo](https://github.com/dunfred)
+- [Jeremiah Quaynor](https://github.com/Jeremiah-Quaynor)
+- [Joshua Tetteh](https://github.com/joshthedevelopa)
