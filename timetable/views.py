@@ -81,11 +81,13 @@ def create_period_view(request):
         course = Course.objects.filter(course_code=course_id).first()
         venue = Venue.objects.filter(id=venue_id).first()
 
-        Period.objects.create(
+        obj = Period.objects.create(
             course = course,
             venue = venue,
             time = time,
             day = day
         )
+
+        # print(obj)
 
     return redirect('timetable:dashboard')
